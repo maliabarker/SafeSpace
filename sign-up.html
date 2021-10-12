@@ -3,6 +3,7 @@
     <head>
         <title>SafeSpace Sign Up</title>
         <link rel="stylesheet" href="styles.css">
+
     </head>
 
     <body>
@@ -21,49 +22,68 @@
                     Bullying will not be tolerated. Glorification of self-harm will not be tolerated. Inappropriate sexual content will not be tolerated. Any harmful content can easily be removed from view by clicking the big red ‘X’ on the top right of every post. 
                     If a post just seems ~off~ users can downvote it. Once it receives 5 downvotes, the post will be removed for review. Any downvoted post—whether it receives 1 downvote or 5—will be reviewed and upheld against the community guidelines. 
                     This app is anonymous. However, you will be required to sign up with your Dominican University email for security purposes. Trust that your identity will never be revealed unless you violate community guidelines or you choose to do so under your discretion.</p>
-                <input type="checkbox" id="agreement-message">
+                <input type="checkbox" id="agreement-message" onclick="showModal()">
                 <label for="agreement-message">I have read the community guidelines and I agree that I will only use this app with <b>empathy</b> and <b>compassion</b> for myself and for others.</label>
             </section>
 
-            <section id="sign-up">
-                <label for="email">Enter School Email:</label>
-                <input type="email" id="email" placeholder="john.doe@students.dominican.edu" required="students.dominican.edu">
-                <label for="password">Create a Password:</label>
-                <input type="password" id="password">
-                <label for="password-check">Re-enter Password:</label>
-                <input type="password" id="password-check">
-                <p>Choose an Avatar:</p>
-                <ul>
-                    <div class="avatar-animals">
-                        <li><button><img src="images/animals.jpeg" alt="avatar choice animal" id="avatar-animals" width="90px"></button></li>
-                        <li><label for="avatar-animals">Random Animal</label></li>
-                    </div>
-                    <div class="avatar-food">
-                        <li><button><img src="images/food.jpeg" alt="avatar food choice" id="avatar-foods" width="90px"></button></li>
-                        <li><label for="avatar-foods">Random Food</label></li>
-                    </div>
-                    <div class="avatar-plants">
-                        <li><button><img src="images/plant.png" alt="avatar plant choice" id="avatar-plants" width="90px"></button></li>
-                        <li><label for="avatar-plants">Random Plant</label></li>
-                    </div>
-                    <div class="avatar-cities">
-                        <li><button><img src="images/cities.jpeg" alt="avatar cities choice" id="avatar-cities" width="90px"></button></li>
-                        <li><label for="avatar-cities">Random City</label></li>
-                    </div>
-                    <div class="avatar-colors">
-                        <li><button><img src="images/colors.png" alt="avatar colors choice" id="avatar-colors" width="90px"></button></li>
-                        <li><label for="avatar-colors">Random Color</label></li>
-                    </div>
-                </ul>
+            <section id="sign-up-or-sign-in">
+                <button id="close" onclick="hideModal()" title="Close Sign Up/Sign In">&times;</button>
+                <!--  -->
+                <div id="sign-up-info">
+                    <label for="email">Enter School Email:</label>
+                    <input type="email" id="email" placeholder="john.doe@students.dominican.edu" required="students.dominican.edu">
+                    <label for="password">Create a Password:</label>
+                    <input type="password" id="password" required>
+                    <label for="password-check">Re-enter Password:</label>
+                    <input type="password" id="password-check" required>
+                    <p>Choose an Avatar:</p>
+                    <ul>
+                        <div class="avatar-animals">
+                            <li><button><img src="images/animals.jpeg" alt="avatar choice animal" id="avatar-animals" width="90px"></button></li>
+                            <li><label for="avatar-animals">Random Animal</label></li>
+                        </div>
+                        <div class="avatar-food">
+                            <li><button><img src="images/food.jpeg" alt="avatar food choice" id="avatar-foods" width="90px"></button></li>
+                            <li><label for="avatar-foods">Random Food</label></li>
+                        </div>
+                        <div class="avatar-plants">
+                            <li><button><img src="images/plant.png" alt="avatar plant choice" id="avatar-plants" width="90px"></button></li>
+                            <li><label for="avatar-plants">Random Plant</label></li>
+                        </div>
+                        <div class="avatar-cities">
+                            <li><button><img src="images/cities.jpeg" alt="avatar cities choice" id="avatar-cities" width="90px"></button></li>
+                            <li><label for="avatar-cities">Random City</label></li>
+                        </div>
+                        <div class="avatar-colors">
+                            <li><button><img src="images/colors.png" alt="avatar colors choice" id="avatar-colors" width="90px"></button></li>
+                            <li><label for="avatar-colors">Random Color</label></li>
+                        </div>
+                    </ul>
+                </div>
                 <input type="submit" id="sign-up-button" value="Sign Up!">
-            </section>
-
-            <h3>or</h3>
-
-            <section id="navigate-sign-in">
+                <h3>or</h3>
                 <p>Already have an account?</p>
                 <a href="sign-in.html"><button id="sign-in-navigation">Sign In!</button></a>
             </section>
+            <div id="overlay"></div>
+
         </main>
+        <script>
+            function showModal(e) {
+                const signModal = document.getElementById('sign-up-or-sign-in')
+                const dimmer = document.getElementById('overlay')
+                console.log('beep')
+                signModal.style.display = 'block'
+                dimmer.style.display = 'block'
+            }
+
+            function hideModal(e) {
+                const signModal = document.getElementById('sign-up-or-sign-in')
+                const dimmer = document.getElementById('overlay')
+                console.log('boop')
+                signModal.style.display = 'none'
+                dimmer.style.display = 'none'
+            }
+        </script>
     </body>
 </html>
