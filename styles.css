@@ -83,6 +83,7 @@
   height: 75%;
   overflow: auto; 
   padding: 20px;
+  border-radius: 2px;
 }
 
 #community-guidelines-close {
@@ -104,10 +105,14 @@
 }
 
 #community-guidelines-content {
-  margin-top: -50px;
+  margin-top: -40px;
+  margin-bottom: 20px;
   padding: 20px;
   line-height: 30px;
   text-align: center;
+  background-color: #F5F7FA;
+  border-radius: 5px;
+  color: #3E4C59;
 }
 
 #food-for-thought {
@@ -120,6 +125,11 @@
 
 #agreement-message-desc {
   font-size: 1.5rem;
+  color: #323F4B;
+}
+
+#agreement-message-label {
+  color: #323F4B;
 }
 
 /* community guidelines modal end */
@@ -142,7 +152,7 @@
   text-align: center;
   color: #5f747a;
   font-size: 3rem;
-  margin: 0 0 20px 0;
+  margin: 0 0 0 0;
 }
 
 #sign-up-info {
@@ -159,8 +169,18 @@
   padding-top: 50px;
 }
 
-#sign-up-info input {
+#sign-up-inputs input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 10px;
+  border-color: #CBD2D9;
+  margin: 10px;
   width: 200px;
+}
+
+#sign-up-info p {
+  color: #616E7C;
 }
 
 #avatars {
@@ -178,29 +198,110 @@
   justify-content: space-around;
 }
 
+#avatars label {
+  color: #3E4C59;
+}
+
 #avatars button:hover {
-  border: solid 2px aqua;
+  border: solid 2px #9fe5f8;
   cursor: pointer;
 }
 
+#sign-up-button {
+  background-color: #bfebf7;
+  border-width: 1px;
+  border-radius: 2px;
+  padding: 10px;
+  width: 300px;
+  margin: 20px 0 20px 34% ;
+  font-size: 1.25rem;
+  color: #3E4C59;
+}
 
+#sign-up-button:hover {
+  background-color: #daf0f6;
+  cursor: pointer;
+}
+
+#sign-up-or-sign-in h4 {
+  position: relative;
+  left: 47%;
+  top: -36px;
+  font-size: 1.1rem;
+  background-color: #E4E7EB;
+  width: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #616E7C;
+}
+
+#already-account {
+  text-align: center;
+  margin-top: -20px;
+  color: #323F4B;
+}
+
+#log-in-info {
+  background-color: #F5F7FA;
+  padding: 20px;
+}
+
+#log-in-info h3 {
+  text-align: center;
+  color: #5f747a;
+  font-size: 3rem;
+  margin: 0 0 0 0;
+}
+
+#log-in-inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+#log-in-inputs input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 10px;
+  border-color: #CBD2D9;
+  margin: 10px;
+  width: 200px;
+}
+
+#log-in-inputs p {
+  font-size: 0.75rem;
+  color: #323F4B;
+}
+
+#log-in-inputs p:hover {
+  color: #66dafa;
+  cursor: pointer;
+}
+
+#sign-in-button {
+  background-color: #bfebf7;
+  border-width: 1px;
+  border-radius: 2px;
+  padding: 10px;
+  width: 300px;
+  margin: 20px 0 20px 34% ;
+  font-size: 1.25rem;
+  color: #3E4C59;
+}
+
+#sign-in-button:hover {
+  background-color: #daf0f6;
+  cursor: pointer;
+}
 
 
 /* sign up sign in modal end */
 /* modal styling end */
 
 
-
-/* styling the sign in page */
-
-
-
-
-
-
 /* styling the home page */
 
-
-
-
-/* other */

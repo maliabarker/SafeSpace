@@ -7,8 +7,12 @@
         <script src="https://kit.fontawesome.com/7533af764e.js" crossorigin="anonymous"></script>
     </head>
 
+
+<!-- ————————————————————Start markup—————————————————————————————————————————————————————————— -->
     <body>
         <main id="sign-up-page">
+            
+<!-- ————————————————————Landing page—————————————————————————————————————————————————————————— -->
             <h1>&#9;</h1>
             <h2>&#128075; Welcome to SafeSpace!</h2>
 
@@ -22,8 +26,12 @@
                 </section>
             </div>
 
+
+<!-- ————————————————————community guidelines modal—————————————————————————————————————————————————————————— -->
             <section id="community-guidelines">
+                <!-- modal close button -->
                 <button id="community-guidelines-close" onclick="hideModal()" title="Close">&times;</button>
+                
                 <h3>Community Guidelines &#128581;</h3>
                 <div id="community-guidelines-content">
                     <p>Guidelines are in place to make sure everyone feels safe and anyone can access help if they feel like anything is too much to handle. 
@@ -40,32 +48,36 @@
                     <p>&#128683;Inappropriate sexual content will not be tolerated. &#128683;</p>
                 </div>
                 
-                <h3>How to Remove and Report Posts</h3>
+                <h3>How to Remove and Report Posts &#128465;</h3>
                 <div id="community-guidelines-content">
                     <p>Any harmful content can easily be removed from view by clicking the big red  ' <i class="fas fa-times" id="x"></i> '  on the top right of every post. </p>
                     <p>If a post just seems ~off~ users can downvote it. Once it receives 5 downvotes, the post will be removed for review.<br>
                         <b>Any</b> downvoted post—whether it receives 1 downvote or 5—will be reviewed and upheld against the community guidelines. </p>
                     <p>This app is anonymous. However, you will be required to sign up with your Dominican University email for security purposes. Trust that your identity will never be revealed unless you violate community guidelines or you choose to do so under your discretion.</p>
                 </div>
+                
                 <p id="agreement-message-desc">Check the agreement message below to continue.</p>
+                
+                <!-- takes user to next modal -->
                 <input type="checkbox" id="agreement-message" onclick="showSignModal()">
-                <label for="agreement-message">I have read the community guidelines and I agree that I will only use this app with <b>empathy</b> and <b>compassion</b> for myself and for others.</label>
+                <label for="agreement-message" id="agreement-message-label">I have read the community guidelines and I agree that I will only use this app with <b>empathy</b> and <b>compassion</b> for myself and for others.</label>
             </section>            
 
+
+<!-- ————————————————————Sign up sign in modal—————————————————————————————————————————————————————————— -->
             <section id="sign-up-or-sign-in">
+                <!-- modal close button  -->
                 <button id="close" onclick="hideModal()" title="Close Sign Up/Sign In">&times;</button>
                 
                 
                 <div id="sign-up-info">
                     <h3>Sign Up</h3>
                     <div id="sign-up-inputs">
-                        <label for="email">Enter School Email:</label>
-                        <input type="email" id="email" placeholder="john.doe@students.dominican.edu" required="students.dominican.edu">
-                        <label for="password">Create a Password:</label>
-                        <input type="password" id="password" required>
-                        <label for="password-check">Re-enter Password:</label>
-                        <input type="password" id="password-check" required>
+                        <input type="email" id="email" placeholder="student email" required="students.dominican.edu">
+                        <input type="password" id="password" placeholder="password" required>
+                        <input type="password" id="password-check" placeholder="re-enter password" required>
                     </div>
+                    
                     <p>Choose an Avatar:</p>
                     <ul id="avatars">
                         <div class="avatar-animals">
@@ -90,16 +102,36 @@
                         </div>
                     </ul>
                 </div>
-
-                <input type="submit" id="sign-up-button" value="Sign Up!">
+                
+                <!-- takes user to home page -->
+                <a href="home-page.html"><button id="sign-up-button"><i class="fas fa-arrow-circle-right"></i> continue</button></a>
+                
                 <hr>
                 <h4>or</h4>
-                <p>Already have an account?</p>
-                <a href="sign-in.html"><button id="sign-in-navigation">Sign In!</button></a>
+
+                <p id="already-account">Already have an account?</p>
+
+                <div id="log-in-info">
+                    <h3>Log In</h3>
+                    <div id="log-in-inputs">
+                        <img src="images/animals.png" alt="avatar choice animal" id="avatar-animals" width="90px">
+                        <input type="email" id="email" placeholder="student email" required="students.dominican.edu">
+                        <input type="password" id="password" placeholder="password" required>
+                        <p><u>Forgot password?</u></p>
+                    </div>
+                </div>
+
+                <!-- takes user to home page -->
+                <a href="home-page.html"><button id="sign-in-button"><i class="fas fa-arrow-circle-right"></i> continue</button></a>
+                
             </section>
+
+<!-- ———————————————Markup for modal background fade—————————————————————————————————————————————————————————— -->
             <div id="overlay"></div>
 
         </main>
+
+<!-- ————————————————————JS for modal functionality—————————————————————————————————————————————————————————— -->
         <script>
             function showGuidelinesModal(e) {
                 const guidelinesModal = document.getElementById('community-guidelines')
