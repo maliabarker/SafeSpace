@@ -3,28 +3,37 @@
     <head>
         <title>SafeSpace Sign Up</title>
         <link rel="stylesheet" href="styles.css">
-
+        <!-- linking fontawesome icon stylesheet -->
+        <script src="https://kit.fontawesome.com/7533af764e.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
-        <main>
+        <main id="sign-up-page">
             <h1>SafeSpace</h1>
-            <h2>Welcome!</h2>
+            <h2>&#128075; Welcome!</h2>
 
-            <section id="welcome-message">
-                <p>SafeSpace’s mission is in the name—we aim to provide a safe and anonymous space for students to talk about anything related to mental health. 
-                    Whether you’re going through a depressive episode, have a family member or friend who is struggling with mental health, or you’re just frustrated with simple everyday things, you are welcomed to talk about it here.</p>
-            </section>
+            <div id="container">
+                <section id="welcome-message">
+                    <p>SafeSpace’s mission is in the name, <br> 
+                        we aim to provide a <b>safe</b> and <b>anonymous</b> space for students to talk about <b><u>anything</u></b> related to mental health.</b> <br>
+                        &#127783;Whether you’re going through a depressive episode&#127783;<br> &#128101;have a family member or friend who is struggling with mental health&#128101; <br> &#128583;or you’re just frustrated with simple everyday things&#128583; </p>
+                    <p id="blue-hearts">&#128153; <i>you are welcomed to talk about it here </i>&#128153;</p>
+                    <div id="dot"><i id="down-arrow" class="fa fa-angle-down"></i></div>
+                </section>
 
-            <section id="community-guidelines-popup">
-                <p>With that being said, there are guidelines in place to make sure everyone feels safe and anyone can access help if they feel like anything is too much to handle. Just some food for thought: recognition is suicide prevention. 
-                    Kindness is suicide prevention. The people you see in class and the people you walk by on-campus every day are the ones using this app. Make sure you are using this app with only one thing in mind—empathy. Spam will not be tolerated. 
-                    Bullying will not be tolerated. Glorification of self-harm will not be tolerated. Inappropriate sexual content will not be tolerated. Any harmful content can easily be removed from view by clicking the big red ‘X’ on the top right of every post. 
-                    If a post just seems ~off~ users can downvote it. Once it receives 5 downvotes, the post will be removed for review. Any downvoted post—whether it receives 1 downvote or 5—will be reviewed and upheld against the community guidelines. 
-                    This app is anonymous. However, you will be required to sign up with your Dominican University email for security purposes. Trust that your identity will never be revealed unless you violate community guidelines or you choose to do so under your discretion.</p>
-                <input type="checkbox" id="agreement-message" onclick="showModal()">
-                <label for="agreement-message">I have read the community guidelines and I agree that I will only use this app with <b>empathy</b> and <b>compassion</b> for myself and for others.</label>
-            </section>
+                
+            </div>
+
+            <h3>Community Guidelines</h3>
+                <section id="community-guidelines">
+                    <p>With that being said, there are guidelines in place to make sure everyone feels safe and anyone can access help if they feel like anything is too much to handle. Just some food for thought: recognition is suicide prevention. 
+                        Kindness is suicide prevention. The people you see in class and the people you walk by on-campus every day are the ones using this app. Make sure you are using this app with only one thing in mind—empathy. Spam will not be tolerated. 
+                        Bullying will not be tolerated. Glorification of self-harm will not be tolerated. Inappropriate sexual content will not be tolerated. Any harmful content can easily be removed from view by clicking the big red ‘X’ on the top right of every post. 
+                        If a post just seems ~off~ users can downvote it. Once it receives 5 downvotes, the post will be removed for review. Any downvoted post—whether it receives 1 downvote or 5—will be reviewed and upheld against the community guidelines. 
+                        This app is anonymous. However, you will be required to sign up with your Dominican University email for security purposes. Trust that your identity will never be revealed unless you violate community guidelines or you choose to do so under your discretion.</p>
+                    <input type="checkbox" id="agreement-message" onclick="showModal()">
+                    <label for="agreement-message">I have read the community guidelines and I agree that I will only use this app with <b>empathy</b> and <b>compassion</b> for myself and for others.</label>
+                </section>            
 
             <section id="sign-up-or-sign-in">
                 <button id="close" onclick="hideModal()" title="Close Sign Up/Sign In">&times;</button>
