@@ -5,7 +5,6 @@
 
 #sign-up-page h1 {
   background-image: url(images/bghelp.png);
-  color: #7a6f73;
   padding: 100px;
   padding-bottom: 150px;
   background-repeat: no-repeat;
@@ -297,11 +296,26 @@
   background-color: #daf0f6;
   cursor: pointer;
 }
-
-
 /* sign up sign in modal end */
 /* modal styling end */
 
 
 /* styling the home page */
+main {
+  background-color: #F5F7FA;
+}
 
+nav {
+  background-color: #bfebf7;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-size: 2rem;
+  margin: 0;
+} 
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
