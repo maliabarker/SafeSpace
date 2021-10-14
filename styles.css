@@ -303,19 +303,133 @@
 /* styling the home page */
 main {
   background-color: #F5F7FA;
+  font-family: Helvetica;
 }
 
 nav {
-  background-color: #bfebf7;
-  padding: 20px;
+  background-color: #7B8794;
+  padding: 5px 20px 5px 20px;
   background-repeat: no-repeat;
   background-size: 100%;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 0;
+  color: #F5F7FA;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 } 
+
+nav p {
+  font-size: 2rem;
+}
 
 ul {
   list-style-type: none;
   display: flex;
   flex-direction: row;
+}
+
+#avatar-img-top {
+  position: relative;
+  left: 46%;
+  top: -50px;
+}
+
+.dot {
+  height: auto;
+  width: auto;
+  background-color: #E4E7EB;
+  border-radius: 50%;
+  display: inline-block;
+  border: solid 1px;
+  border-color: #7B8794;
+}
+
+.dot img {
+  padding: 20px;
+  justify-self: center;
+  align-self: center;
+}
+
+#make-post p {
+  text-align: center;
+  margin-top: -20px;
+  color: #323F4B;
+}
+
+#make-post-button {
+  background-color: #bfebf7;
+  margin-left: 40.75vw;
+  margin-top: 10px;
+  border-radius: 50px;
+  border: none;
+  padding: 20px 90px 20px 90px;
+  font-size: 1.1rem;
+  color: #323F4B;
+}
+
+#make-post-button:hover {
+  background-color: #daf0f6;
+  cursor: pointer;
+}
+
+#post-modal {
+  display: none;
+  background-color: #E4E7EB;
+  position: fixed;
+  z-index: 1; 
+  left: 20%;
+  top: 10vh;
+  width: 55%; 
+  height: 75%;
+  overflow: auto; 
+  padding: 20px;
+  border-radius: 2px;
+}
+
+#pseudo-post {
+  background-color: #E4E7EB;
+  box-shadow: 0 0 8px 8px #F5F7FA inset;
+  margin-top: 50px;
+  color: #323F4B;
+  padding: 20px 200px 20px 200px;
+  margin: 20px 200px 0 200px;
+}
+
+#post-top {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+}
+
+#info-button {
+  margin-left: auto;
+}
+
+#delete-post {
+  color: tomato;
+}
+
+#post-content-container {
+  margin-top: 20px;
+}
+
+#post-content {
+  text-align: center;
+}
+
+#post-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#post-info p {
+  padding-left: 20px;
+}
+
+#post-info i:hover {
+  cursor: pointer;
+  color: #8cb6c2;
 }

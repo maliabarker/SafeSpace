@@ -7,8 +7,8 @@
     <body>
         <main>
             <nav>
+                <p>SafeSpace</p>
                 <ul>
-                    <li>SafeSpace</li>
                     <li><i class="fas fa-home" id="home" title="Back to Home"></i></li>
                     <li><i class="fas fa-cog" id="settings" title="User Settings"></i></li>
                     <li><i class="fas fa-hands-helping" id="community" title="Community Resources"></i></li>
@@ -17,31 +17,75 @@
             </nav>
 
             <section id="make-post">
-                <img src="images/animals.png" alt="squirrel avatar" width="90px">
-                <input type="text" id="make-post" placeholder="Feel free to talk, this is a safe space...">
-                <input type="submit" value="Post">
+                <div id="avatar-img-top">
+                    <div class="dot">
+                        <img src="images/animals.png" alt="squirrel avatar" width="90px">
+                    </div>
+                </div>
+                <p>Welcome back <b>Anonymous Squirrel</b></p>
+                <button id="make-post-button" onclick="showPostModal()"><i class="fas fa-plus"></i> Make a Post</button>
             </section>
 
-            <section>
-                <img src="images/animals.png" alt="squirrel avatar" width="90px">
-                <h3>Anonymous Squirrel</h3>
-                <p><time datetime="2021-10-11 02:39">Oct 11</time></p>
-                <p><i class="fas fa-info-circle"></i></p>
-                <p><i class="fas fa-times-circle"></i></p>
-                <p>"post content"</p>
-                <i class="fas fa-comments" id="comments"></i>
-                <p>0 comments</p>
-                <i class="fas fa-thumbs-up"></i>
-                <p>0 upvotes</p>
-                <i class="fas fa-thumbs-down"></i>
-                <p>0 downvotes</p>
+            <section id="post-modal">
+                <!-- modal close button  -->
+                <button id="close" onclick="hideModal()" title="Close">&times;</button>
+                <div class="dot"><img src="images/animals.png" alt="squirrel avatar" width="90px"></div>
+                <input type="text" id="make-post" placeholder="Feel free to talk, this is a safe space...">
+                <button id="post">Post</button>
+            </section>
 
-                <i class="fas fa-thumbs-up"></i>
-                <i class="fas fa-thumbs-down"></i>
-                <i class="fas fa-comment" id="make-comment"></i>
+            <section id="pseudo-post">
+                <div id="post-top">
+                    <div class="dot"><img src="images/animals.png" alt="squirrel avatar" width="50px"></div>
+                    <div id="name-date">
+                        <h3>Anonymous Squirrel</h3>
+                        <div><time datetime="2021-10-11 02:39">Oct 11, 2021</time></div>
+                    </div>
+                    <p id="info-button"><i class="fas fa-info-circle"></i></p>
+                    <p id="delete-post"><i class="fas fa-times-circle" id="delete-post" title="Delete"></i></p>
+                </div>
+
+                <div id="post-content-container">
+                    <hr>
+                    <p id="post-content">"post content"</p>
+                    <hr>
+                </div>
+                
+                <div id="post-info">
+                    <p><i class="fas fa-comments" id="comments" title="Comment"></i> 0 comments</p>
+                    <p><i class="fas fa-thumbs-up" title="Upvote Post"></i> 0 upvotes</p>
+                    <p><i class="fas fa-thumbs-down" title="Downvote Post"></i> 0 downvotes</p>
+                </div>
+                
                 
             </section>
+
+<!-- ———————————————Markup for modal background fade—————————————————————————————————————————————————————————— -->
+            <div id="overlay"></div>
+
         </main>
+
         <script src="https://kit.fontawesome.com/7533af764e.js" crossorigin="anonymous"></script>
+        <script>
+            function showPostModal(e) {
+                const makePost = document.getElementById('post-modal')
+                const dimmer = document.getElementById('overlay')
+                makePost.style.display = 'block'
+                // console.log('beep')
+                dimmer.style.display = 'block'
+            }
+
+            function hideModal(e) {
+                const makePost = document.getElementById('post-modal')
+                const dimmer = document.getElementById('overlay')
+                makePost.style.display = 'none'
+                // console.log('beep')
+                dimmer.style.display = 'none'
+            }
+
+            function upvote(e) {
+                console.log('im dying')
+            }
+        </script>
     </body>
 </html>
