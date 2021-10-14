@@ -9,10 +9,10 @@
             <nav>
                 <p>SafeSpace</p>
                 <ul>
-                    <li><i class="fas fa-home" id="home" title="Back to Home"></i></li>
+                    <li><a href="home-page.html"><i class="fas fa-home" id="home" title="Back to Home"></i></a></li>
                     <li><i class="fas fa-cog" id="settings" title="User Settings"></i></li>
                     <li><i class="fas fa-hands-helping" id="community" title="Community Resources"></i></li>
-                    <li><i class="fas fa-power-off" id="logout" title="Logout"></i></li>
+                    <li><a href="index.html"><i class="fas fa-power-off" id="logout" title="Logout"></i></a></li>
                 </ul>
             </nav>
 
@@ -27,18 +27,51 @@
             </section>
 
             <section id="post-modal">
-                <!-- modal close button  -->
-                <button id="close" onclick="hideModal()" title="Close">&times;</button>
-                <div class="dot"><img src="images/animals.png" alt="squirrel avatar" width="90px"></div>
-                <input type="text" id="make-post" placeholder="Feel free to talk, this is a safe space...">
-                <button id="post">Post</button>
+                <div id="post-modal-content">
+                    <!-- modal close button  -->
+                    <button id="close" onclick="hideModal()" title="Close">&times;</button>
+                    <div id="post-modal-avatar">
+                        <div class="post-modal-dot">
+                            <img src="images/animals.png" alt="squirrel avatar" width="50px">
+                        </div>
+                        <p>Anonymous Squirrel</p>
+                    </div>
+                    <textarea id="make-post-textarea" cols="30" rows="10" placeholder="Feel free to talk, this is a safe space..."></textarea>
+                    <button id="post" onclick="makePost()">Post</button>
+                </div>
             </section>
 
             <section id="pseudo-post">
                 <div id="post-top">
-                    <div class="dot"><img src="images/animals.png" alt="squirrel avatar" width="50px"></div>
+                    <div class="post-1-dot"><img src="images/animals.png" alt="squirrel avatar" id="post-1-avatar" width="50px"></div>
                     <div id="name-date">
                         <h3>Anonymous Squirrel</h3>
+                        <div><time datetime="2021-10-14 02:39">Oct 14, 2021</time></div>
+                    </div>
+                    <p id="info-button"><i class="fas fa-info-circle"></i></p>
+                    <p id="delete-post"><i class="fas fa-times-circle" id="delete-post" title="Delete"></i></p>
+                </div>
+
+                <div id="post-content-container">
+                    <hr>
+                    <p id="post-content">"post content"</p>
+                    <hr>
+                </div>
+                
+                <div id="post-info">
+                    <p><i class="fas fa-comments" id="comments" title="Comment"></i> 0 comments</p>
+                    <p><i class="fas fa-thumbs-up" title="Upvote Post"></i> 0 upvotes</p>
+                    <p><i class="fas fa-thumbs-down" title="Downvote Post"></i> 0 downvotes</p>
+                </div>
+            </section>
+
+            <hr id="post-separator">
+
+            <section id="pseudo-post">
+                <div id="post-top">
+                    <div class="post-2-dot"><img src="images/food.png" alt="squirrel avatar" id="post-2-avatar" width="50px"></div>
+                    <div id="name-date">
+                        <h3>Anonymous Hamburger</h3>
                         <div><time datetime="2021-10-11 02:39">Oct 11, 2021</time></div>
                     </div>
                     <p id="info-button"><i class="fas fa-info-circle"></i></p>
@@ -56,9 +89,37 @@
                     <p><i class="fas fa-thumbs-up" title="Upvote Post"></i> 0 upvotes</p>
                     <p><i class="fas fa-thumbs-down" title="Downvote Post"></i> 0 downvotes</p>
                 </div>
-                
-                
             </section>
+
+            <section id="new-pseudo-post">
+                <div id="post-top">
+                    <div class="post-2-dot"><img src="images/food.png" alt="squirrel avatar" id="post-2-avatar" width="50px"></div>
+                    <div id="name-date">
+                        <h3>Anonymous Hamburger</h3>
+                        <div><time datetime="2021-10-11 02:39">Oct 11, 2021</time></div>
+                    </div>
+                    <p id="info-button"><i class="fas fa-info-circle"></i></p>
+                    <p id="delete-post"><i class="fas fa-times-circle" id="delete-post" title="Delete"></i></p>
+                </div>
+
+                <div id="post-content-container">
+                    <hr>
+                    <p id="new-post-content">"post content"</p>
+                    <hr>
+                </div>
+                
+                <div id="post-info">
+                    <p><i class="fas fa-comments" id="comments" title="Comment"></i> 0 comments</p>
+                    <p><i class="fas fa-thumbs-up" title="Upvote Post"></i> 0 upvotes</p>
+                    <p><i class="fas fa-thumbs-down" title="Downvote Post"></i> 0 downvotes</p>
+                </div>
+            </section>
+
+            <hr id="post-separator">
+
+            <div id="posts-container">
+
+            </div>
 
 <!-- ———————————————Markup for modal background fade—————————————————————————————————————————————————————————— -->
             <div id="overlay"></div>
@@ -81,6 +142,16 @@
                 makePost.style.display = 'none'
                 // console.log('beep')
                 dimmer.style.display = 'none'
+            }
+
+            function makePost(e) {
+                const pseudoPost = document.getElementById('new-pseudo-post')
+                const newPostContent = document.getElementById('new-post-content')
+                const postsContainer = document.getElementById('posts-container')
+                const text = document.getElementById('make-post-textarea').value
+                console.log(text)
+                newPostContent.innerHTML = text
+                postsContainer.append(pseudoPost)
             }
 
             function upvote(e) {
