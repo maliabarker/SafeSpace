@@ -63,8 +63,8 @@
                         </div>
                 
                         <div id="post-info">
-                            <p><i class="fas fa-comments" id="comments" title="Comment"></i> 0 comments</p>
-                            <p><i class="fas fa-thumbs-up" title="Upvote Post" onclick="upvote()"></i> 0 upvotes</p>
+                            <p id="comment-info"><i class="fas fa-comments" id="comments" title="Comment"></i> 0 comments</p>
+                            <p><i class="fas fa-thumbs-up" title="Upvote Post" onclick="upvote()"></i> <span id="upvote-info">0 upvotes</span></p>
                             <p><i class="fas fa-thumbs-down" title="Downvote Post"></i> 0 downvotes</p>
                         </div>
                     </section>
@@ -92,7 +92,7 @@
                 
                         <div id="post-info">
                             <p><i class="fas fa-comments" id="comments" title="Comment"></i> 0 comments</p>
-                            <p><i class="fas fa-thumbs-up" title="Upvote Post"></i> 0 upvotes</p>
+                            <p><i class="fas fa-thumbs-up" title="Upvote Post" onclick="upvote()"></i> <span id="upvote-info">0 upvotes</span></p>
                             <p><i class="fas fa-thumbs-down" title="Downvote Post"></i> 0 downvotes</p>
                         </div>
                     </section>
@@ -292,7 +292,31 @@
             }
 
             function upvote(e) {
-                console.log('im dying')
+                const target = event.target;
+                console.log(target.nextElementSibling.nextElementSibling)
+
+                // console.log(target);
+                const upvotes = target.nextElementSibling.nextElementSibling
+                // console.log(upvotes.textContent)
+                let upvoteStr = upvotes.textContent
+                console.log(upvoteStr)
+                let numStr = parseFloat(upvoteStr.replace(/\D/g, ''));
+                // console.log(numStr)
+                const clicked = event.target;
+                // console.log(clicked)
+                
+                if(clicked.style.color === 'rgb(140, 182, 194)'){
+                    clicked.style.color = "#323F4B";
+                    newNum = --numStr;
+                    upvotes.innerHTML = `${newNum} Upvotes`
+                }
+                else{
+                    clicked.style.color = "#8cb6c2";
+                    //do your businesses  
+                    newNum = ++numStr
+                    console.log(newNum)
+                    upvotes.innerHTML = `${newNum} Upvotes`
+                } 
             }
         </script>
     </body>
