@@ -468,7 +468,7 @@ ul a:hover {
   column-gap: 20px;
 }
 
-#avatar-img img {
+#avatar-img {
   padding: 20px;
   justify-self: center;
   align-self: center;
