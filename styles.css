@@ -389,6 +389,8 @@ ul a:hover {
   cursor: pointer;
 }
 
+/* ———————————————Styling the post modal———————————————————————— */
+
 #post-modal {
   display: none;
   background-color: #E4E7EB;
@@ -420,17 +422,6 @@ ul a:hover {
   color: #323F4B;
   margin-top: 10px;
   margin-left: 50px;
-}
-
-.post-modal-dot {
-  background-color: white;
-  height: auto;
-  width: auto;
-  border-radius: 50%;
-  display: inline-block;
-  border: solid 1px;
-  border-color: #7B8794;
-  padding: 10px;
 }
 
 #post-modal-avatar p {
@@ -477,33 +468,7 @@ ul a:hover {
   column-gap: 20px;
 }
 
-.post-1-dot {
-  background-color: #F5F7FA;
-  height: auto;
-  width: auto;
-  border-radius: 50%;
-  display: inline-block;
-  border: solid 1px;
-  border-color: #7B8794;
-}
-
-.post-2-dot {
-  background-color: #F5F7FA;
-  height: auto;
-  width: auto;
-  border-radius: 50%;
-  display: inline-block;
-  border: solid 1px;
-  border-color: #7B8794;
-}
-
-.post-1-dot img {
-  padding: 20px;
-  justify-self: center;
-  align-self: center;
-}
-
-.post-2-dot img {
+#avatar-img img {
   padding: 20px;
   justify-self: center;
   align-self: center;
@@ -542,4 +507,13 @@ ul a:hover {
 
 #post-separator {
   margin: 40px 200px 40px 200px;
+}
+
+#new-pseudo-post {
+  background-color: #E4E7EB;
+  box-shadow: 0 0 8px 8px #F5F7FA inset;
+  margin-top: 50px;
+  color: #323F4B;
+  padding: 20px 100px 20px 100px;
+  margin: 20px 300px 0 300px;
 }
