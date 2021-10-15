@@ -81,23 +81,23 @@
                     <p>Choose an Avatar:</p>
                     <ul id="avatars">
                         <div class="avatar-animals">
-                            <li><button><img src="images/animals.png" alt="avatar choice animal" id="avatar-animals" width="90px"></button></li>
+                            <li><button onclick="chooseAvatar()"><img src="images/animals.png" alt="avatar choice animal" id="avatar-animals" width="90px"></button></li>
                             <li><label for="avatar-animals">Random Animal</label></li>
                         </div>
                         <div class="avatar-food">
-                            <li><button><img src="images/food.png" alt="avatar food choice" id="avatar-foods" width="90px"></button></li>
+                            <li><button onclick="chooseAvatar()"><img src="images/food.png" alt="avatar food choice" id="avatar-foods" width="90px"></button></li>
                             <li><label for="avatar-foods">Random Food</label></li>
                         </div>
                         <div class="avatar-plants">
-                            <li><button><img src="images/plant.png" alt="avatar plant choice" id="avatar-plants" width="90px"></button></li>
+                            <li><button onclick="chooseAvatar()"><img src="images/plant.png" alt="avatar plant choice" id="avatar-plants" width="90px"></button></li>
                             <li><label for="avatar-plants">Random Plant</label></li>
                         </div>
                         <div class="avatar-cities">
-                            <li><button><img src="images/cities.png" alt="avatar cities choice" id="avatar-cities" width="90px"></button></li>
+                            <li><button onclick="chooseAvatar()"><img src="images/cities.png" alt="avatar cities choice" id="avatar-cities" width="90px"></button></li>
                             <li><label for="avatar-cities">Random City</label></li>
                         </div>
                         <div class="avatar-colors">
-                            <li><button><img src="images/colors.png" alt="avatar colors choice" id="avatar-colors" width="90px"></button></li>
+                            <li><button onclick="chooseAvatar()"><img src="images/colors.png" alt="avatar colors choice" id="avatar-colors" width="90px"></button></li>
                             <li><label for="avatar-colors">Random Color</label></li>
                         </div>
                     </ul>
@@ -158,6 +158,14 @@
                 guidelinesModal.style.display = 'none'
                 signModal.style.display = 'none'
                 dimmer.style.display = 'none'
+            }
+
+            function chooseAvatar(e) {
+                console.log('clicked');
+                const clickedAvatar = event.target;
+                const button = clickedAvatar.parentElement;
+                console.log(button);
+                button.style.border = 'solid 2px rgb(159, 229, 248)';
             }
         </script>
     </body>

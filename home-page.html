@@ -47,9 +47,9 @@
                 <section id="pseudo-post-1">
                     <section id="pseudo-post">
                         <div id="post-top">
-                            <div><img src="images/animals.png" alt="squirrel avatar" id="avatar-img" width="50px"></div>
+                            <div><img src="images/plant.png" alt="squirrel avatar" id="avatar-img" width="50px"></div>
                             <div id="name-date">
-                                <h3>Anonymous Squirrel</h3>
+                                <h3>Anonymous Plant</h3>
                                 <div><time datetime="2021-10-14 02:39">Oct 14, 2021</time></div>
                             </div>
                             <p id="info-button"><i class="fas fa-info-circle"></i></p>
@@ -58,14 +58,14 @@
 
                         <div id="post-content-container">
                             <hr>
-                            <p id="post-content">"post content"</p>
+                            <p id="post-content">post content</p>
                             <hr>
                         </div>
                 
                         <div id="post-info">
-                            <p id="comment-info"><i class="fas fa-comments" id="comments" title="Comment"></i> 0 comments</p>
-                            <p><i class="fas fa-thumbs-up" title="Upvote Post" onclick="upvote()"></i> <span id="upvote-info">0 upvotes</span></p>
-                            <p><i class="fas fa-thumbs-down" title="Downvote Post"></i> 0 downvotes</p>
+                            <p id="comment-info"><i class="fas fa-comments" id="comments" title="Comment"></i> 0 Comments</p>
+                            <p><i class="fas fa-thumbs-up" title="Upvote Post" onclick="upvote()"></i> <span>0 Upvotes</span></p>
+                            <p><i class="fas fa-thumbs-down" title="Downvote Post" onclick="downvote()"></i> <span>0 Downvotes</span></p>
                         </div>
                     </section>
 
@@ -86,14 +86,14 @@
 
                         <div id="post-content-container">
                             <hr>
-                            <p id="post-content">"post content"</p>
+                            <p id="post-content">post content</p>
                             <hr>
                         </div>
                 
                         <div id="post-info">
-                            <p><i class="fas fa-comments" id="comments" title="Comment"></i> 0 comments</p>
-                            <p><i class="fas fa-thumbs-up" title="Upvote Post" onclick="upvote()"></i> <span id="upvote-info">0 upvotes</span></p>
-                            <p><i class="fas fa-thumbs-down" title="Downvote Post"></i> 0 downvotes</p>
+                            <p><i class="fas fa-comments" id="comments" title="Comment"></i> 0 Comments</p>
+                            <p><i class="fas fa-thumbs-up" title="Upvote Post" onclick="upvote()"></i> <span>0 Upvotes</span></p>
+                            <p><i class="fas fa-thumbs-down" title="Downvote Post" onclick="downvote()"></i> <span>0 Downvotes</span></p>
                         </div>
                     </section>
 
@@ -209,7 +209,7 @@
                 const line1 = document.createElement('hr');
                 contentContainer.appendChild(line1);
 
-                const content = document.createElement('div');
+                const content = document.createElement('p');
                 content.setAttribute('id', 'post-content');
                 const textInput = document.getElementById('make-post-textarea').value;
                 content.innerHTML = textInput
@@ -233,17 +233,26 @@
                 postInfo.appendChild(comments);
 
                 const upvote = document.createElement('p');
-                upvote.innerHTML = ' 0 Upvotes';
+                // upvote.innerHTML = ' 0 Upvotes';
                 const upvoteIcon = document.createElement('i');
                 upvoteIcon.setAttribute('class', 'fas fa-thumbs-up');
-                upvote.insertBefore(upvoteIcon, upvote.firstChild);
+                upvoteIcon.setAttribute('onclick', 'upvote()');
+                upvoteIcon.setAttribute('title', 'Upvote Post');
+                const upvoteNum = document.createElement('span');
+                upvoteNum.innerHTML = ' 0 Upvotes';
+                upvote.appendChild(upvoteIcon);
+                upvote.appendChild(upvoteNum);
                 postInfo.appendChild(upvote);
 
                 const downvote = document.createElement('p');
-                downvote.innerHTML = ' 0 Downvotes';
                 const downvoteIcon = document.createElement('i');
                 downvoteIcon.setAttribute('class', 'fas fa-thumbs-down');
-                downvote.insertBefore(downvoteIcon, downvote.firstChild);
+                downvoteIcon.setAttribute('title', 'Downvote Post');
+                downvoteIcon.setAttribute('onclick', 'downvote()');
+                const downvoteNum = document.createElement('span');
+                downvoteNum.innerHTML = ' 0 Downvotes';
+                downvote.appendChild(downvoteIcon);
+                downvote.appendChild(downvoteNum);
                 postInfo.appendChild(downvote);
 
                 return postInfo;
@@ -293,8 +302,7 @@
 
             function upvote(e) {
                 const target = event.target;
-                console.log(target.nextElementSibling.nextElementSibling)
-
+                // console.log(target.nextElementSibling.nextElementSibling)
                 // console.log(target);
                 const upvotes = target.nextElementSibling.nextElementSibling
                 // console.log(upvotes.textContent)
@@ -316,6 +324,33 @@
                     newNum = ++numStr
                     console.log(newNum)
                     upvotes.innerHTML = `${newNum} Upvotes`
+                } 
+            }
+
+            function downvote(e) {
+                const target = event.target;
+                // console.log(target.nextElementSibling.nextElementSibling)
+                // console.log(target);
+                const upvotes = target.nextElementSibling.nextElementSibling
+                // console.log(upvotes.textContent)
+                let upvoteStr = upvotes.textContent
+                console.log(upvoteStr)
+                let numStr = parseFloat(upvoteStr.replace(/\D/g, ''));
+                // console.log(numStr)
+                const clicked = event.target;
+                // console.log(clicked)
+                
+                if(clicked.style.color === 'rgb(140, 182, 194)'){
+                    clicked.style.color = "#323F4B";
+                    newNum = --numStr;
+                    upvotes.innerHTML = `${newNum} Downvotes`
+                }
+                else{
+                    clicked.style.color = "#8cb6c2";
+                    //do your businesses  
+                    newNum = ++numStr
+                    console.log(newNum)
+                    upvotes.innerHTML = `${newNum} Downvotes`
                 } 
             }
         </script>

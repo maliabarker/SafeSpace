@@ -195,6 +195,7 @@
   overflow: hidden;
   justify-items: center;
   justify-content: space-around;
+  border: none;
 }
 
 #avatars label {
@@ -435,6 +436,7 @@ ul a:hover {
   padding: 10px 10px 0 10px;
   margin-bottom: 20px;
   margin-top: 20px;
+  margin-left: 40px;
 }
 
 #post-modal #post {
@@ -480,6 +482,11 @@ ul a:hover {
 
 #delete-post {
   color: tomato;
+}
+
+#delete-post:hover {
+  color: rgb(252, 133, 112);
+  cursor: pointer;
 }
 
 #post-content-container {
