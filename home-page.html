@@ -44,7 +44,7 @@
 
             <div id = "all-posts">
 
-                <section class="pseudo-post-1">
+                <section id="pseudo-post-1">
                     <section id="pseudo-post">
                         <div id="post-top">
                             <div><img src="images/animals.png" alt="squirrel avatar" id="avatar-img" width="50px"></div>
@@ -53,7 +53,7 @@
                                 <div><time datetime="2021-10-14 02:39">Oct 14, 2021</time></div>
                             </div>
                             <p id="info-button"><i class="fas fa-info-circle"></i></p>
-                            <p id="delete-post"><i class="fas fa-times-circle" id="delete-post" title="Delete"></i></p>
+                            <p id="delete-post"><i class="fas fa-times-circle" id="delete-post" title="Delete" onclick="deletePost()"></i></p>
                         </div>
 
                         <div id="post-content-container">
@@ -64,7 +64,7 @@
                 
                         <div id="post-info">
                             <p><i class="fas fa-comments" id="comments" title="Comment"></i> 0 comments</p>
-                            <p><i class="fas fa-thumbs-up" title="Upvote Post"></i> 0 upvotes</p>
+                            <p><i class="fas fa-thumbs-up" title="Upvote Post" onclick="upvote()"></i> 0 upvotes</p>
                             <p><i class="fas fa-thumbs-down" title="Downvote Post"></i> 0 downvotes</p>
                         </div>
                     </section>
@@ -81,7 +81,7 @@
                                 <div><time datetime="2021-10-11 02:39">Oct 11, 2021</time></div>
                             </div>
                             <p id="info-button"><i class="fas fa-info-circle"></i></p>
-                            <p id="delete-post"><i class="fas fa-times-circle" id="delete-post" title="Delete"></i></p>
+                            <p id="delete-post"><i class="fas fa-times-circle" id="delete-post" title="Delete" onclick="deletePost()"></i></p>
                         </div>
 
                         <div id="post-content-container">
@@ -109,6 +109,8 @@
 
         <script src="https://kit.fontawesome.com/7533af764e.js" crossorigin="anonymous"></script>
         <script>
+            let globalcount = 0;
+
             function showPostModal(e) {
                 const makePost = document.getElementById('post-modal')
                 const dimmer = document.getElementById('overlay')
@@ -194,6 +196,7 @@
                 const deleteIcon = document.createElement('i');
                 deleteIcon.setAttribute('class', 'fas fa-times-circle')
                 deleteIcon.setAttribute('id', 'delete-post');
+                deleteIcon.setAttribute('onclick', 'deletePost()');
                 deleteButton.appendChild(deleteIcon);
 
                 return postTop;
@@ -248,7 +251,7 @@
 
             function newPost() {
                 const postsContainer = document.createElement('div');
-                postsContainer.setAttribute('id', 'posts-container');
+                postsContainer.setAttribute('id', 'posts-container' + globalcount++);
                 const post = document.createElement('section')
                 post.setAttribute('id', 'pseudo-post');
                 postsContainer.appendChild(post);
@@ -277,6 +280,15 @@
 
                 document.getElementById('make-post-textarea').value = "";
                 hideModal()
+            }
+
+            function deletePost(e) {
+                const deleteIcon = event.target;
+                const deleteIconParent = deleteIcon.parentElement
+                const deleteIconGrandparent = deleteIconParent.parentElement.parentElement.parentElement
+                console.log(deleteIconGrandparent)
+
+                deleteIconGrandparent.remove();
             }
 
             function upvote(e) {
