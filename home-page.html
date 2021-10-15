@@ -43,7 +43,6 @@
             </section>
 
             <div id = "all-posts">
-                <div id="posts-container"></div>
 
                 <section class="pseudo-post-1">
                     <section id="pseudo-post">
@@ -276,7 +275,7 @@
 
                 allPosts.insertBefore(post, allPosts.firstChild)
 
-                
+                document.getElementById('make-post-textarea').value = "";
                 hideModal()
             }
 
